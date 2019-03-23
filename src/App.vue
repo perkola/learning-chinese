@@ -2,18 +2,18 @@
   <div class="text-black">
     <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
 
-    <div v-for="radical in radicals" class="flex mt-2 mr-2">
-      <div class="w-1/4 pl-2">
+    <div v-for="radical in radicals" class="flex mt-2 sm:mt-3 mr-2 sm:mr-3">
+      <div class="w-1/5 sm:w-1/6 lg:w-1/10 pl-2 sm:pl-3">
         <div class="flex flex-col items-center bg-blue-lighter rounded py-2">
           <span class="text-xl">{{ radical.character }}</span>
           <span class="text-sm text-grey-darker">{{ radical.pinyin }}</span>
           <span class="text-sm text-grey-dark">{{ radical.translation }}</span>
         </div>
       </div>
-      <div class="w-3/4 overflow-hidden">
-        <carousel :paginationEnabled="false" :scrollPerPage="false" :perPage="3">
+      <div class="w-4/5 sm:w-5/6 lg:w-9/10 overflow-hidden">
+        <carousel :paginationEnabled="false" :scrollPerPage="false" :perPage="4" :perPageCustom="[[576, 5], [992, 9]]">
           <slide v-for="r in radical.related">
-            <div class="ml-2">
+            <div class="ml-2 sm:ml-3">
             <div class="flex flex-col items-center w-full bg-white rounded py-2">
               <span class="text-xl">{{ r.character }}</span>
               <span class="text-sm text-grey-dark">{{ r.pinyin }}</span>
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <p class="mt-2 leading-none bg-white p-2 text-sm text-grey-dark">&copy; 2019</p>
+    <p class="mt-2 sm:mt-3 p-2 sm:p-3 leading-none bg-white text-sm text-grey-dark">&copy; 2019</p>
   </div>
 </template>
 
