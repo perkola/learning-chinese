@@ -1,31 +1,45 @@
 <template>
-  <div class="px-3 text-black">
+  <div class="text-black">
     <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
 
-    <div v-for="radical in radicals" class="flex mt-3">
-      <div class="flex flex-col items-center w-16 bg-blue-lighter rounded py-2">
-        <span class="text-xl">{{ radical.character }}</span>
-        <span class="text-sm text-grey-darker">{{ radical.pinyin }}</span>
-        <span class="text-sm text-grey-dark">{{ radical.translation }}</span>
+    <div v-for="radical in radicals" class="flex mt-2 mr-2">
+      <div class="w-1/4 pl-2">
+        <div class="flex flex-col items-center bg-blue-lighter rounded py-2">
+          <span class="text-xl">{{ radical.character }}</span>
+          <span class="text-sm text-grey-darker">{{ radical.pinyin }}</span>
+          <span class="text-sm text-grey-dark">{{ radical.translation }}</span>
+        </div>
       </div>
-      <div v-for="r in radical.related" class="flex flex-col items-center w-16 bg-white rounded py-2 ml-3">
-        <span class="text-xl">{{ r.character }}</span>
-        <span class="text-sm text-grey-dark">{{ r.pinyin }}</span>
-        <span class="text-sm text-grey">{{ r.translation }}</span>
+      <div class="w-3/4 overflow-hidden">
+        <carousel :paginationEnabled="false" :scrollPerPage="false" :perPage="3">
+          <slide v-for="r in radical.related">
+            <div class="ml-2">
+            <div class="flex flex-col items-center w-full bg-white rounded py-2">
+              <span class="text-xl">{{ r.character }}</span>
+              <span class="text-sm text-grey-dark">{{ r.pinyin }}</span>
+              <span class="text-sm text-grey">{{ r.translation }}</span>
+            </div>
+            </div>
+          </slide>
+      </carousel>
       </div>
     </div>
 
-    <p class="py-3 text-sm text-grey-dark">&copy; 2019</p>
+    <p class="mt-2 leading-none bg-white p-2 text-sm text-grey-dark">&copy; 2019</p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
   name: 'app',
   data: function () {
     return {
+      components: {
+        Carousel,
+        Slide
+      },
       radicals: [
         {
           character: '女',
@@ -34,6 +48,7 @@ export default {
           related: [
             { character: '她', pinyin: 'tā', translation: 'her' },
             { character: '好', pinyin: 'hǎo', translation: 'good' },
+            { character: '安', pinyin: 'ān', translation: 'calm' },
           ]
         },
         {
@@ -44,6 +59,7 @@ export default {
             { character: '他', pinyin: 'tā', translation: 'him' },
             { character: '你', pinyin: 'nǐ', translation: 'you' },
             { character: '什', pinyin: 'shén', translation: 'what' },
+            { character: '信', pinyin: 'xìn', translation: 'letter' },
           ]
         },
         {
@@ -72,6 +88,7 @@ export default {
           related: [
             { character: '桃', pinyin: 'táo', translation: 'peach' },
             { character: '梨', pinyin: 'lí', translation: 'pear' },
+            { character: '森', pinyin: 'sēn', translation: 'forest' },
           ]
         },
         {
@@ -109,6 +126,7 @@ export default {
           translation: 'sun',
           related: [
             { character: '是', pinyin: 'shì', translation: 'is are am' },
+            { character: '早', pinyin: 'zǎo', translation: 'morning' },
           ]
         },
         {
@@ -123,13 +141,49 @@ export default {
           translation: 'roof',
           related: [
             { character: '字', pinyin: 'zì', translation: 'character' },
+            { character: '安', pinyin: 'ān', translation: 'calm' },
           ]
+        },
+        {
+          character: '言',
+          pinyin: 'yán',
+          translation: 'speech',
+          related: [
+            { character: '信', pinyin: 'xìn', translation: 'letter' },
+          ]
+        },
+        {
+          character: '不',
+          pinyin: 'bù',
+          translation: 'not',
+          related: []
+        },
+        {
+          character: '中',
+          pinyin: 'zhōng',
+          translation: 'middle',
+          related: []
+        },
+        {
+          character: '再',
+          pinyin: 'zài',
+          translation: 'again',
+          related: []
+        },
+        {
+          character: '见',
+          pinyin: 'jiàn',
+          translation: 'see',
+          related: []
+        },
+        {
+          character: '也',
+          pinyin: 'yě',
+          translation: 'too',
+          related: []
         },
       ]
     }
   },
-  components: {
-    HelloWorld
-  }
 }
 </script>
