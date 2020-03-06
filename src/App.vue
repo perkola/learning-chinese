@@ -55,6 +55,7 @@ export default {
             { character: '她', pinyin: 'tā', translation: 'her' },
             { character: '好', pinyin: 'hǎo', translation: 'good' },
             { character: '安', pinyin: 'ān', translation: 'calm' },
+            { character: '始', pinyin: 'shǐ', translation: 'to begin' },
           ]
         },
         {
@@ -66,6 +67,8 @@ export default {
             { character: '你', pinyin: 'nǐ', translation: 'you' },
             { character: '什', pinyin: 'shén', translation: 'what' },
             { character: '信', pinyin: 'xìn', translation: 'letter' },
+            { character: '会', pinyin: 'huì', translation: 'can' },
+            { character: '认', pinyin: 'rèn', translation: 'to know' },
           ]
         },
         {
@@ -87,6 +90,7 @@ export default {
             { character: '吃', pinyin: 'chī', translation: 'to eat' },
             { character: '喝', pinyin: 'hē', translation: 'to drink' },
             { character: '喜', pinyin: 'xǐ', translation: 'to like' },
+            { character: '识', pinyin: 'shi', translation: 'to know'}
           ]
         },
         {
@@ -268,8 +272,63 @@ export default {
           pinyin: 'wáng',
           translation: 'king',
           related: [
-            { character: '\n' +
-            '球', pinyin: 'qiú', translation: 'ball' },
+            { character: '球', pinyin: 'qiú', translation: 'ball' },
+          ]
+        },
+        {
+          character: '彳',
+          pinyin: 'chì',
+          translation: 'step',
+          related: [
+            { character: '很', pinyin: 'hěn', translation: 'very' },
+          ]
+        },
+        {
+          character: '艮',
+          pinyin: 'gèn',
+          translation: 'hill',
+          related: [
+            { character: '很', pinyin: 'hěn', translation: 'very' },
+          ]
+        },
+        {
+          character: '云',
+          pinyin: 'yún',
+          translation: 'cloud',
+          related: [
+            { character: '会', pinyin: 'huì', translation: 'can' },
+          ]
+        },
+        {
+          character: '开',
+          pinyin: 'kāi',
+          translation: 'to open',
+          related: [
+            //
+          ]
+        },
+        {
+          character: '车',
+          pinyin: 'chē',
+          translation: 'car',
+          related: [
+            //
+          ]
+        },
+        {
+          character: '讠',
+          pinyin: 'yán',
+          translation: 'speech',
+          related: [
+            { character: '识', pinyin: 'shi', translation: 'to know'}
+          ]
+        },
+        {
+          character: '八',
+          pinyin: 'bā',
+          translation: 'eight',
+          related: [
+            { character: '识', pinyin: 'shi', translation: 'to know'}
           ]
         },
       ]
